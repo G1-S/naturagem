@@ -17,7 +17,7 @@ function Home() {
 
       <div className="relative z-10 max-w-4xl px-6">
         <h1 className="text-4xl md:text-5xl font-bold text-red-100 hover:text-green-600 transition">
-          Delivery Rangers!
+          Naturagen!
         </h1>
         <p className="mt-20 text-lg">
             Aqui nós fazemos de tudo para lhe enviar os melhores produtos
