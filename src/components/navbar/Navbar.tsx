@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -15,11 +15,10 @@ function Navbar() {
     };
   }, []);
 
-  // Calcula a cor com base na posição de rolagem
   const calculateBgColor = () => {
-    const maxScroll = 300; // Altura após a qual a cor será totalmente cinza
+    const maxScroll = 300; //
     const scrollFactor = Math.min(scrollPosition / maxScroll, 1);
-    const colorValue = Math.floor(255 - scrollFactor * 128); // de 255 (branco) a 127 (cinza claro)
+    const colorValue = Math.floor(255 - scrollFactor * 128); 
     return `rgb(${colorValue}, ${colorValue}, ${colorValue})`;
   };
 
@@ -30,14 +29,11 @@ function Navbar() {
         style={{ backgroundColor: calculateBgColor() }}
       >
         <ul className="flex justify-end space-x-4 py-2 px-4">
+          <Link to='/home' className="text-black hover:text-orange-500 cursor-pointer font-bold mt-1">naturagem</Link>
+          <Link to='/produtos' className="text-black hover:text-orange-500 cursor-pointer font-bold mt-1">nossos produtos</Link>
+          <Link to='/cadastrarproduto' className="text-black hover:text-orange-500 cursor-pointer font-bold mt-1">cadastro de produtos</Link>
           <li className="text-black hover:text-orange-500 cursor-pointer font-bold mt-1">
-            serviço
-          </li>
-          <li className="text-black hover:text-orange-500 cursor-pointer font-bold mt-1">
-            sobre nós
-          </li>
-          <li className="text-black hover:text-orange-500 cursor-pointer font-bold mt-1">
-            contato
+            pedidos
           </li>
           <li className="ml-8 flex items-center space-x-0">
             <button className="bg-gray-300 text-black hover:bg-orange-500 rounded-l-full px-4 py-1">
