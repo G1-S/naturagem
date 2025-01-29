@@ -5,6 +5,7 @@ import './App.css'
 import ListaProdutos from './components/produtos/listaprodutos/ListaProdutos'
 import FormProduto from './components/produtos/formprodutos/FormProdutos'
 import DeletarProduto from './components/produtos/deletartema/DeletarProduto'
+import Carrossel from './components/carrossel/Carrossel';
 
 
 function App() {
@@ -20,9 +21,10 @@ function App() {
               <Route path="/editarproduto/:id" element={<FormProduto />} />
               <Route path='/deletarproduto/:id' element={<DeletarProduto/>}/>
             </Routes>
+          <Carrossel/>
         </BrowserRouter>
     </>
   )
 }
 
-export default App
+export default App;
