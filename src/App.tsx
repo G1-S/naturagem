@@ -4,7 +4,7 @@ import Navbar from './components/navbar/Navbar'
 import './App.css'
 import ListaProdutos from './components/produtos/listaprodutos/ListaProdutos'
 import FormProduto from './components/produtos/formprodutos/FormProdutos'
-import DeletarProduto from './components/produtos/deletartema/DeletarProduto'
+import DeletarProduto from './components/produtos/deletarprdutos/DeletarProduto'
 
 
 function App() {
