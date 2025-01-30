@@ -33,3 +33,4 @@ export const atualizar = async (
 export const deletar = async (url: string) => {
   await api.delete(url)
 }
+
