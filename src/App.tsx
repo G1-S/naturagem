@@ -5,14 +5,13 @@ import './App.css'
 import ListaProdutos from './components/produtos/listaprodutos/ListaProdutos'
 import FormProduto from './components/produtos/formprodutos/FormProdutos'
 import DeletarProduto from './components/produtos/deletartema/DeletarProduto'
-import Carrossel from './components/carrossel/Carrossel';
-
 
 function App() {
   return (
     <>
         <BrowserRouter>
           <Navbar />
+          <main className='overflow-x-hidden overflow-y-hidden'>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/home" element={<Home />} />
@@ -21,7 +20,7 @@ function App() {
               <Route path="/editarproduto/:id" element={<FormProduto />} />
               <Route path='/deletarproduto/:id' element={<DeletarProduto/>}/>
             </Routes>
-          <Carrossel/>
+          </main>
         </BrowserRouter>
     </>
   )

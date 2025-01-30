@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { FiMenu, FiX } from "react-icons/fi"; // Ícones de menu e fechar
 
 function Navbar() {
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false); // Estado para controlar o menu
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,34 +18,114 @@ function Navbar() {
   }, []);
 
   const calculateBgColor = () => {
-    const maxScroll = 300; //
+    const maxScroll = 300;
     const scrollFactor = Math.min(scrollPosition / maxScroll, 1);
-    const colorValue = Math.floor(255 - scrollFactor * 128); 
+    const colorValue = Math.floor(127 + scrollFactor * 128);
+    return `rgb(${colorValue}, ${colorValue}, ${colorValue})`;
+  };
+
+  const calculateTextColor = () => {
+    const maxScroll = 300;
+    const scrollFactor = Math.min(scrollPosition / maxScroll, 1);
+    const colorValue = Math.floor(255 - scrollFactor * 255);
     return `rgb(${colorValue}, ${colorValue}, ${colorValue})`;
   };
 
   return (
     <>
       <div
-        className="fixed top-0 left-0 right-0 z-10 transition-colors duration-300"
+        className="fixed top-0 left-0 right-0 z-20 transition-colors duration-300"
         style={{ backgroundColor: calculateBgColor() }}
       >
-        <ul className="flex justify-end space-x-4 py-2 px-4">
-          <Link to='/home' className="text-black hover:text-orange-500 cursor-pointer font-bold mt-1">naturagem</Link>
-          <Link to='/produtos' className="text-black hover:text-orange-500 cursor-pointer font-bold mt-1">nossos produtos</Link>
-          <Link to='/cadastrarproduto' className="text-black hover:text-orange-500 cursor-pointer font-bold mt-1">cadastro de produtos</Link>
-          <li className="text-black hover:text-orange-500 cursor-pointer font-bold mt-1">
-            pedidos
-          </li>
-          <li className="ml-8 flex items-center space-x-0">
-            <button className="bg-gray-300 text-black hover:bg-orange-500 rounded-l-full px-4 py-1">
-              Create account
+        <div className="flex justify-between items-center py-2 px-4">
+          <Link
+            to="/home"
+            className="cursor-pointer font-bold mt-1 mr-10 hover:text-green-500 transform hover:translate-y-[-2px] transition-transform duration-200"
+            style={{ color: calculateTextColor() }}
+          >
+            Naturagen!
+          </Link>
+          <div className="hidden md:flex space-x-6">
+            <Link
+              to="/produtos"
+              className="cursor-pointer font-bold mt-1 hover:text-green-500 transform hover:translate-y-[-2px] transition-transform duration-200"
+              style={{ color: calculateTextColor() }}
+            >
+              nossos produtos
+            </Link>
+            <Link
+              to="/cadastrarproduto"
+              className="cursor-pointer font-bold mt-1 hover:text-green-500 transform hover:translate-y-[-2px] transition-transform duration-200"
+              style={{ color: calculateTextColor() }}
+            >
+              cadastro de produtos
+            </Link>
+            <li
+              className="cursor-pointer font-bold mt-1 hover:text-green-500 transform hover:translate-y-[-2px] transition-transform duration-200"
+              style={{ color: calculateTextColor() }}
+            >
+              pedidos
+            </li>
+            <li
+              className="cursor-pointer font-bold mt-1 hover:text-green-500 transform hover:translate-y-[-2px] transition-transform duration-200"
+              style={{ color: calculateTextColor() }}
+            >
+              categorias
+            </li>
+            <li
+              className="cursor-pointer font-bold mt-1 hover:text-green-500 transform hover:translate-y-[-2px] transition-transform duration-200"
+              style={{ color: calculateTextColor() }}
+            >
+              cadastrar categorias
+            </li>
+          </div>
+          <div className="md:hidden">
+            <button onClick={() => setMenuOpen(!menuOpen)} className="text-xl focus:outline-none">
+              {menuOpen ? <FiX style={{ color: calculateTextColor() }} /> : <FiMenu style={{ color: calculateTextColor() }} />}
             </button>
-            <button className="bg-black text-white hover:bg-orange-500 rounded-r-full px-4 py-1">
-              Log in
-            </button>
-          </li>
-        </ul>
+          </div>
+        </div>
+        {menuOpen && (
+          <div className="md:hidden flex flex-col space-y-2 px-4 pb-4">
+            <Link
+              to="/produtos"
+              className="cursor-pointer font-bold mt-1 hover:text-green-500"
+              style={{ color: calculateTextColor() }}
+              onClick={() => setMenuOpen(false)}
+            >
+              nossos produtos
+            </Link>
+            <Link
+              to="/cadastrarproduto"
+              className="cursor-pointer font-bold mt-1 hover:text-green-500"
+              style={{ color: calculateTextColor() }}
+              onClick={() => setMenuOpen(false)}
+            >
+              cadastro de produtos
+            </Link>
+            <li
+              className="cursor-pointer font-bold mt-1 hover:text-green-500"
+              style={{ color: calculateTextColor() }}
+              onClick={() => setMenuOpen(false)}
+            >
+              pedidos
+            </li>
+            <li
+              className="cursor-pointer font-bold mt-1 hover:text-green-500"
+              style={{ color: calculateTextColor() }}
+              onClick={() => setMenuOpen(false)}
+            >
+              categorias
+            </li>
+            <li
+              className="cursor-pointer font-bold mt-1 hover:text-green-500"
+              style={{ color: calculateTextColor() }}
+              onClick={() => setMenuOpen(false)}
+            >
+              cadastrar categorias
+            </li>
+          </div>
+        )}
       </div>
     </>
   );
