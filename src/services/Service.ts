@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: ' '
+  baseURL: 'http://localhost:8080'
 });
 
 export const buscar = async (
@@ -33,3 +33,4 @@ export const atualizar = async (
 export const deletar = async (url: string) => {
   await api.delete(url)
 }
+

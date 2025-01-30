@@ -20,6 +20,7 @@ function Navbar() {
   const calculateBgColor = () => {
     const maxScroll = 300;
     const scrollFactor = Math.min(scrollPosition / maxScroll, 1);
+
     const colorValue = Math.floor(127 + scrollFactor * 128);
     return `rgb(${colorValue}, ${colorValue}, ${colorValue})`;
   };
@@ -28,6 +29,7 @@ function Navbar() {
     const maxScroll = 300;
     const scrollFactor = Math.min(scrollPosition / maxScroll, 1);
     const colorValue = Math.floor(255 - scrollFactor * 255);
+
     return `rgb(${colorValue}, ${colorValue}, ${colorValue})`;
   };
 
@@ -82,6 +84,7 @@ function Navbar() {
           <div className="md:hidden">
             <button onClick={() => setMenuOpen(!menuOpen)} className="text-xl focus:outline-none">
               {menuOpen ? <FiX style={{ color: calculateTextColor() }} /> : <FiMenu style={{ color: calculateTextColor() }} />}
+
             </button>
           </div>
         </div>
