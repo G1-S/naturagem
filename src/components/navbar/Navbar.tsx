@@ -33,6 +33,7 @@ function Navbar() {
           <li><Link to='/produtos' className="text-black hover:text-orange-500 cursor-pointer font-bold mt-1">nossos produtos</Link></li>
           <li><Link to='/cadastrarproduto' className="text-black hover:text-orange-500 cursor-pointer font-bold mt-1">cadastro de produtos</Link></li>
           <li><Link to='/Categorias' className="text-black hover:text-orange-500 cursor-pointer font-bold mt-1">Categorias</Link></li>
+          <li><Link to='/cadastrarcategoria' className='text-black hover:text-orange-500 cursor-pointer font-bold mt-1'>Cadastrar categoria</Link></li>
 
           <li className="ml-8 flex items-center space-x-0">
             <button className="bg-gray-300 text-black hover:bg-orange-500 rounded-l-full px-4 py-1">
