@@ -18,6 +18,7 @@ function App() {
     <>
         <BrowserRouter>
           <Navbar />
+          <main className='overflow-x-hidden overflow-y-hidden'>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/home" element={<Home />} />
@@ -30,6 +31,7 @@ function App() {
               <Route path="/editarcategoria/:id" element={<FormCategoria />} />
               <Route path="/deletarcategoria/:id" element={<DeletarCategoria />} />
             </Routes>
+          </main>
         </BrowserRouter>
     </>
   )

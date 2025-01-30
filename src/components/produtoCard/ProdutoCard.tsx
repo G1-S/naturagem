@@ -25,7 +25,8 @@ const styles = {
     overflow: 'hidden',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
     transition: 'transform 0.2s, box-shadow 0.2s',
-    maxWidth: '200px',
+    width: '250px',
+    minWidth: '100px',
     margin: '0 auto',
     cursor: 'pointer',
     background: 'linear-gradient(to bottom right, #808080, #006400)', // Degradê de cinza para verde médio
