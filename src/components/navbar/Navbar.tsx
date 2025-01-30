@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi"; // Ícones de menu e fechar
+import Carrossel from "../carrossel/Carrossel";
 
 function Navbar() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -79,7 +80,6 @@ function Navbar() {
           <div className="md:hidden">
             <button onClick={() => setMenuOpen(!menuOpen)} className="text-xl focus:outline-none">
               {menuOpen ? <FiX style={{ color: calculateTextColor() }} /> : <FiMenu style={{ color: calculateTextColor() }} />}
-
             </button>
           </div>
         </div>
@@ -108,23 +108,26 @@ function Navbar() {
             >
               pedidos
             </li>
-            <li
+            <Link
+              to="/cadastrarcategoria"
               className="cursor-pointer font-bold mt-1 hover:text-green-500"
               style={{ color: calculateTextColor() }}
               onClick={() => setMenuOpen(false)}
             >
               categorias
-            </li>
-            <li
+            </Link>
+            <Link
+              to="/cadastrarcategoria"
               className="cursor-pointer font-bold mt-1 hover:text-green-500"
               style={{ color: calculateTextColor() }}
               onClick={() => setMenuOpen(false)}
             >
               cadastrar categorias
-            </li>
+            </Link>
           </div>
         )}
       </div>
+      
     </>
   );
 }
