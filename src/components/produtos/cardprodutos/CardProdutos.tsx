@@ -18,7 +18,7 @@ function CardProduto({ produto }: CardProdutosProps) {
           </div>
           <div className="flex gap-4" >
             <Link
-              to={`/categorias`}
+              to={`/editarprodutos/${produto.id}`}
               className="text-white bg-lime-700 hover:bg-lime-900 
                       py-1 px-1 rounded"
             >
@@ -26,7 +26,7 @@ function CardProduto({ produto }: CardProdutosProps) {
             </Link>
   
             <Link
-              to={`/deletarcategoria/${produto.id}`}
+              to={`/deletarprodutos/${produto.id}`}
               className="text-red-500 border py-1 px-2 border-red-300 
                          rounded-md"
             >

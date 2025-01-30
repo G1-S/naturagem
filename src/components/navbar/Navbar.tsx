@@ -56,7 +56,7 @@ function Navbar() {
               nossos produtos
             </Link>
             <Link
-              to="/cadastrarproduto"
+              to="/cadastrarprodutos"
               className="cursor-pointer font-bold mt-1 hover:text-green-500 transform hover:translate-y-[-2px] transition-transform duration-200"
               style={{ color: calculateTextColor() }}
             >
@@ -68,18 +68,13 @@ function Navbar() {
             >
               pedidos
             </li>
-            <li
+            <Link
+              to="/cadastrarcategoria"
               className="cursor-pointer font-bold mt-1 hover:text-green-500 transform hover:translate-y-[-2px] transition-transform duration-200"
               style={{ color: calculateTextColor() }}
             >
-              categorias
-            </li>
-            <li
-              className="cursor-pointer font-bold mt-1 hover:text-green-500 transform hover:translate-y-[-2px] transition-transform duration-200"
-              style={{ color: calculateTextColor() }}
-            >
-              cadastrar categorias
-            </li>
+              cadastro de categorias
+            </Link>
           </div>
           <div className="md:hidden">
             <button onClick={() => setMenuOpen(!menuOpen)} className="text-xl focus:outline-none">
