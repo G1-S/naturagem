@@ -5,7 +5,9 @@ import './App.css'
 import ListaProdutos from './components/produtos/listaprodutos/ListaProdutos'
 import FormProduto from './components/produtos/formprodutos/FormProdutos'
 import DeletarProduto from './components/produtos/deletartema/DeletarProduto'
-import Carrossel from './components/carrossel/Carrossel';
+import ListaCategorias from './components/categorias/listacategorias/ListaCategorias'
+import FormCategoria from './components/categorias/formcategorias/FormCategoria'
+import DeletarCategoria from './components/categorias/deletarcategoria/DeletarCategoria'
 
 
 function App() {
@@ -20,8 +22,11 @@ function App() {
               <Route path="/cadastrarproduto" element={<FormProduto />} />
               <Route path="/editarproduto/:id" element={<FormProduto />} />
               <Route path='/deletarproduto/:id' element={<DeletarProduto/>}/>
+              <Route path="/categorias" element={<ListaCategorias/>} />
+              <Route path="/cadastrarcategoria" element={<FormCategoria />} />
+              <Route path="/editarcategoria/:id" element={<FormCategoria />} />
+              <Route path="/deletarcategoria/:id" element={<DeletarCategoria />} />
             </Routes>
-          <Carrossel/>
         </BrowserRouter>
     </>
   )
